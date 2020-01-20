@@ -1,0 +1,24 @@
+#+TITLE: Final Project
+
+* Planning
+** Source [[https:snap.stanford.edu/data/][Stanford database]]
+*** Mainly social media
+*** Consider:
+**** Finding connections
+**** Group/node sizes
+**** Different groups sizes
+***** Link with group type
+****** Different social media etc.
+*** Has data on all/most social media website and internet related data
+*** Idea 1:
+**** Relation between physics theories
+**** [[https:snap.stanford.edu/data/cit-HepTh.html][Source]]
+**** Functions:
+***** List all dependencies
+***** List all dependent theories
+***** Check if a theory mentions another theory
+***** List citation path
+**** Real life use
+***** If a theory is disproven check how many are affected
+***** Check importance of theory by how many theories cite it
+*****
