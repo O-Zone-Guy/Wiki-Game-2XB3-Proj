@@ -21,4 +21,36 @@
 **** Real life use
 ***** If a theory is disproven check how many are affected
 ***** Check importance of theory by how many theories cite it
-*****
+*** Idea 2:
+** Source [[http:open.canada.ca/data/en/dataset][Canada Database]]
+*** Canadian data
+*** Consider:
+**** Geographical applications
+**** Political applications
+**** census type application, population
+*** Idea 1:
+**** French school locations
+***** Find nearest french school
+**** [[https://open.canada.ca/data/en/dataset/340649e1-385a-45de-9b6c-753d0b54868c][Source]]
+**** [[file:~/school/2XB3/ecoles-minorites-minority-schools-bil.csv][Local data]]
+
+* <2020-01-23 Thu> Meeting
+** Discussing potential projects
+*** Citation dependencies
+**** Too small
+*** Amazon product relations
+**** Not sure what to do
+*** Amazon reviews
+    No idea yet
+    Filter out negative reviews by negative reviews
+**** not sure what to do
+*** Map navigation
+    Find shortest between two points
+    Find the best route given random number of points to travel
+**** Not much to do
+*** Patents
+**** Similar to Citation dependencies
+**** The chosen one
+**** Data size of 3.7M nodes and 16.5M edges
+** Proposal
+*** A word doc template
