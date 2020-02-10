@@ -1,4 +1,6 @@
 #+TITLE: Final Project
+#+Description: General plan for 2XB3 final project. Written in java.
+
 
 * Planning
 ** Source [[https:snap.stanford.edu/data/][Stanford database]]
