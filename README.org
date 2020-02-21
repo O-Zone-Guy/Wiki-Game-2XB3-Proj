@@ -1,0 +1,20 @@
+#+title: 2XB3 Final Project
+#+author: Omar Alkersh
+#+options: toc:nil
+#+latex_header: \usepackage[a4paper, margin=1in]{geometry}
+
+* Introduction
+  This project aims to find the shortest path between two wiki pages. See [[https://en.wikipedia.org/wiki/Wikipedia:Wiki_Game][Wiki Game]].
+
+  We use a database provided by [[http://snap.stanford.edu/data/wiki-topcats.html][snap.stanford.edu]] to create a directed unweighted graph. We traverse this graph to find the shortest distance between two wikipedia pages whose names are provided by the user.
+
+  This project is implemented in Java.
+
+  It is planned to use breadth first search to find all possible shortest paths.
+
+* Developers
+  * Harshveer Singh Gaba
+  * Jinzge Dai
+  * Mike Tee
+  * Nihal Azavedo
+  * Omar Alkersh
