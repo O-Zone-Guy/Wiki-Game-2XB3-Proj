@@ -32,7 +32,21 @@
           + Retrieved using the node numbers and the SQL Database
     - Consider something to do with categories
 ** TODO Write Spec
-
+   - Modules
+     - SQLite module
+       - A module to wrap around the SQLite module provided by Java
+     - Interface
+       - Responsible for input and output
+       - State of interaction process
+         - Input step, etc.
+     - Traversal Module
+       - Responsible for finding the shortest path between two nodes
+   - ADT
+     - Path
+       - Stores the solutions sequences
+     - Node
+       - node number
+       - set of neighbouring nodes numbers, not ADT
 ** TODO Distribute modules work
    :PROPERTIES:
    :Effort:   0:20
