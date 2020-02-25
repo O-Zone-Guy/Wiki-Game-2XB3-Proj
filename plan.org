@@ -9,6 +9,8 @@
 
 * TODO Finish Project [0%]
 
+** TODO create google form for member strengths
+
 ** TODO Write Requirements
    - Input
      - Multiple Types
@@ -28,9 +30,11 @@
    - Output
      1. The length
      2. The actual path
+        + Should be sorted using lexicographical to sort the paths
+        + Allow user to search the paths for a page/string in page name
         + Using the names of the wiki pages
           + Retrieved using the node numbers and the SQL Database
-    - Consider something to do with categories
+   - Consider something to do with categories
 ** TODO Write Spec
    - Modules
      - SQLite module
