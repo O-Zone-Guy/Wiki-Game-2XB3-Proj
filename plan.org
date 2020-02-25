@@ -1,5 +1,6 @@
 #+TITLE: Final Project
 #+Description: General plan for 2XB3 final project. Written in java.
+#+options: toc:nil
 #+FILETAGS: 2xb3
 
 * Things to add here                                               :noexport:
