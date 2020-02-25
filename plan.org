@@ -9,7 +9,27 @@
 * TODO Finish Project [0%]
 
 ** TODO Write Requirements
-
+   - Input
+     - Multiple Types
+       - User inputs two names (wikipages)
+       - ~ user inputs one name (wiki page)
+   - Processing
+     - Convert string to related node id
+     - Find the paths such that all possible paths are <= |path|
+   - Interaction
+     1. Take user input
+     2. Say if we found a link or not
+        - If found a link keep going, else terminate
+     3. Ask user for a guess about the path length
+        - The number of guesses is yet to be decided
+        - Allow user to skip guessing
+     4. Show the output.
+   - Output
+     1. The length
+     2. The actual path
+        + Using the names of the wiki pages
+          + Retrieved using the node numbers and the SQL Database
+    - Consider something to do with categories
 ** TODO Write Spec
 
 ** TODO Distribute modules work
