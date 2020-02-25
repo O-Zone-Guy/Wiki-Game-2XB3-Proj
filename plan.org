@@ -31,6 +31,8 @@
      1. The length
      2. The actual path
         + Should be sorted using lexicographical to sort the paths
+          + Least obvious
+            + Least category changes
         + Allow user to search the paths for a page/string in page name
         + Using the names of the wiki pages
           + Retrieved using the node numbers and the SQL Database
