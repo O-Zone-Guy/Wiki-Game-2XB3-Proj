@@ -7,7 +7,7 @@
   1. Maybe add project description
   2. Maybe add project members.
 
-* TODO Finish Project [0%]
+* TODO Finish Project [25%]
 
 ** TODO create google form for member strengths
 
@@ -32,14 +32,7 @@
      2. The actual path
         + Should be sorted using lexicographical to sort the paths
           + Least obvious
-            + Least category changes
-        + Allow user to search the paths for a page/string in page name
-        + Using the names of the wiki pages
-          + Retrieved using the node numbers and the SQL Database
-   - Consider something to do with categories
-** TODO Write Spec
-   - Modules
-     - SQLite module
+            + Least category change
        - A module to wrap around the SQLite module provided by Java
      - Interface
        - Responsible for input and output
@@ -53,17 +46,10 @@
      - Node
        - node number
        - set of neighbouring nodes numbers, not ADT
-** TODO Distribute modules work
+** DONE Distribute modules work
+   CLOSED: [2020-02-26 Wed 21:42]
    :PROPERTIES:
    :Effort:   0:20
    :END:
 
 ** TODO Implement program
-
-* Meetings
-** Meeting #4?
-  <2020-02-27 Thu 10:30>
-*** To be discussed [0/3]
-    * [ ] Documentation
-    * [ ] Software architecture
-    * [ ] Any concerns
