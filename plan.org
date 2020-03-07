@@ -2,16 +2,18 @@
 #+Description: General plan for 2XB3 final project. Written in java.
 #+options: toc:nil
 #+FILETAGS: 2xb3
+#+TODO: TODO ASSIGN(s@) | DONE CANCELLED
 
 * Things to add here                                               :noexport:
-  1. Maybe add project description
-  2. Maybe add project members.
+* TODO Finish Project [75%]
+  :PROPERTIES:
+  :COOKIE_DATA: todo recursice
+  :END:
+** DONE create google form for member strengths
+   CLOSED: [2020-03-06 Fri 21:42]
 
-* TODO Finish Project [25%]
-
-** TODO create google form for member strengths
-
-** TODO Write Requirements
+** DONE Write Requirements
+   CLOSED: [2020-03-06 Fri 21:42]
    - Input
      - Multiple Types
        - User inputs two names (wikipages)
