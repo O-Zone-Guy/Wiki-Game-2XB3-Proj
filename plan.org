@@ -2,7 +2,7 @@
 #+Description: General plan for 2XB3 final project. Written in java.
 #+options: toc:nil
 #+FILETAGS: 2xb3
-#+TODO: TODO ASSIGN(s@) | DONE CANCELLED
+#+TODO: TODO ASSIGN(s@) | DONE CANCELLED(@)
 
 * Things to add here                                               :noexport:
 * TODO Finish Project [75%]
@@ -53,5 +53,8 @@
    :PROPERTIES:
    :Effort:   0:20
    :END:
-
 ** TODO Implement program
+*** TODO Decide on design
+    SCHEDULED: <2020-03-09 Mon> DEADLINE: <2020-03-11 Wed>
+*** TODO Assign implementation
+    DEADLINE: <2020-03-13 Fri>
