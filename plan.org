@@ -5,7 +5,7 @@
 #+TODO: TODO ASSIGN(s@) | DONE CANCELLED(@)
 
 * Things to add here                                               :noexport:
-* TODO Finish Project [75%]
+* TODO Finish Project [50%]
   :PROPERTIES:
   :COOKIE_DATA: todo recursice
   :END:
@@ -48,8 +48,7 @@
      - Node
        - node number
        - set of neighbouring nodes numbers, not ADT
-** DONE Distribute modules work
-   CLOSED: [2020-02-26 Wed 21:42]
+** TODO Distribute modules work
    :PROPERTIES:
    :Effort:   0:20
    :END:
