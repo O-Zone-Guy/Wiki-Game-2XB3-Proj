@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import java.util.Set;
+import java.util.Map;
 
 public class SQLite3
 {
@@ -35,6 +36,20 @@ public class SQLite3
   {
     // select id from page where name like %name% 
     return 0;
+  }
+
+  public Map<Integer, Map<Integer, Integer>> getGraph(int start, int end)
+  {
+    // data example:
+		/*
+		graph = {'s': {'a': 2, 'b': 1},
+            'a': {'s': 3, 'b': 4, 'c':8},
+            'b': {'s': 4, 'a': 2, 'd': 2},
+            'c': {'a': 2, 'd': 7, 't': 4},
+            'd': {'b': 1, 'c': 11, 't': 5},
+            't': {'c': 3, 'd': 5}}
+		*/
+    return null;
   }
 
   public Set<Integer> getNeighbours(int start)
