@@ -4,8 +4,66 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import java.util.Set;
+
 public class SQLite3
 {
+
+  Connection conn = null;
+  String path = "";
+
+  public SQLite3(String db_path)
+  {
+    path = db_path;
+  }
+
+  public boolean open()
+  {
+    try
+    {
+      conn = DriverManager.getConnection("jdbc:sqlite:" + path);
+      return true;
+    }
+    catch(SQLException e)
+		{
+			System.err.println(e.getMessage());
+		}
+    return false;
+  }
+
+  public int getPageId(String name)
+  {
+    // select id from page where name like %name% 
+    return 0;
+  }
+
+  public Set<Integer> getNeighbours(int start)
+  {
+    // set of end points from given start node
+    return null;
+  }
+
+  public Set<String> getCategories(int page_id)
+  {
+    // return set of categories for page_id
+    return null;
+  }
+
+  public boolean close()
+  {
+    try
+    {
+      if(conn != null) conn.close();
+      return true;
+    }
+    catch(SQLException e)
+    {
+      System.err.println(e.getMessage());
+    }
+    return false;
+  }
+
+  // EXAMPLE
 	public static void main(String[] args)
 	{
 		Connection connection = null;
