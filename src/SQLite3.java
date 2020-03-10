@@ -41,7 +41,8 @@ public class SQLite3
   public Map<Integer, Map<Integer, Integer>> getGraph(int start, int end)
   {
     // data example:
-		/*
+		/* the numbers are weights we can just set to 1
+     * this is normal data structure for dijktra.
 		graph = {'s': {'a': 2, 'b': 1},
             'a': {'s': 3, 'b': 4, 'c':8},
             'b': {'s': 4, 'a': 2, 'd': 2},
@@ -78,9 +79,14 @@ public class SQLite3
     return false;
   }
 
-  // EXAMPLE
 	public static void main(String[] args)
 	{
+    example();
+  }
+  
+  // EXAMPLE
+  public static void example()
+  {
 		Connection connection = null;
 		try
 		{
