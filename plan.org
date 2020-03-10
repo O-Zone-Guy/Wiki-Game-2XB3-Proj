@@ -2,16 +2,18 @@
 #+Description: General plan for 2XB3 final project. Written in java.
 #+options: toc:nil
 #+FILETAGS: 2xb3
+#+TODO: TODO ASSIGN(s@) | DONE CANCELLED(@)
 
 * Things to add here                                               :noexport:
-  1. Maybe add project description
-  2. Maybe add project members.
+* TODO Finish Project [50%]
+  :PROPERTIES:
+  :COOKIE_DATA: todo recursice
+  :END:
+** DONE create google form for member strengths
+   CLOSED: [2020-03-06 Fri 21:42]
 
-* TODO Finish Project [25%]
-
-** TODO create google form for member strengths
-
-** TODO Write Requirements
+** DONE Write Requirements
+   CLOSED: [2020-03-06 Fri 21:42]
    - Input
      - Multiple Types
        - User inputs two names (wikipages)
@@ -46,10 +48,12 @@
      - Node
        - node number
        - set of neighbouring nodes numbers, not ADT
-** DONE Distribute modules work
-   CLOSED: [2020-02-26 Wed 21:42]
+** TODO Distribute modules work
    :PROPERTIES:
    :Effort:   0:20
    :END:
-
 ** TODO Implement program
+*** TODO Decide on design
+    SCHEDULED: <2020-03-09 Mon> DEADLINE: <2020-03-11 Wed>
+*** TODO Assign implementation
+    DEADLINE: <2020-03-13 Fri>

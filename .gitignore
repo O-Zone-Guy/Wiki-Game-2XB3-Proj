@@ -1,3 +1,5 @@
+*.db3
+*.db
 *.txt
 auto/*
 *.tex
