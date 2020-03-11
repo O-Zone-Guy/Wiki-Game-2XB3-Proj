@@ -2,18 +2,21 @@
 #+Description: General plan for 2XB3 final project. Written in java.
 #+options: toc:nil
 #+FILETAGS: 2xb3
-#+TODO: TODO ASSIGN(s@) | DONE CANCELLED(@)
+#+TODO: TODO ASSIGN(@) | DONE CANCELLED(@)
 
 * Things to add here                                               :noexport:
-* TODO Finish Project [50%]
+* TODO Finish Project [66%]
   :PROPERTIES:
   :COOKIE_DATA: todo recursice
+  :END:
+  :LOGBOOK:
+  CLOCK: [2020-03-10 Tue 20:55]--[2020-03-10 Tue 20:55] =>  0:00
   :END:
 ** DONE create google form for member strengths
    CLOSED: [2020-03-06 Fri 21:42]
 
 ** DONE Write Requirements
-   CLOSED: [2020-03-06 Fri 21:42]
+   CLOSED: [2020-03-10 Tue 20:51]
    - Input
      - Multiple Types
        - User inputs two names (wikipages)
@@ -48,12 +51,48 @@
      - Node
        - node number
        - set of neighbouring nodes numbers, not ADT
-** TODO Distribute modules work
-   :PROPERTIES:
-   :Effort:   0:20
-   :END:
-** TODO Implement program
-*** TODO Decide on design
-    SCHEDULED: <2020-03-09 Mon> DEADLINE: <2020-03-11 Wed>
-*** TODO Assign implementation
-    DEADLINE: <2020-03-13 Fri>
+*** DONE Split req into functional and non-functional bullet points
+    CLOSED: [2020-03-10 Tue 20:51]
+** TODO Implement program [37%]
+*** DONE Assign implementation
+    CLOSED: [2020-03-10 Tue 20:50] DEADLINE: <2020-03-13
+*** DONE Distribute modules work
+    CLOSED: [2020-03-10 Tue 20:51]
+    :PROPERTIES:
+    :Effort:   0:20
+    :END:
+*** DONE Write assignment
+    CLOSED: [2020-03-10 Tue 20:57]
+    :LOGBOOK:
+    CLOCK: [2020-03-10 Tue 20:55]--[2020-03-10 Tue 20:57] =>  0:02
+    :END:
+*** ASSIGN General Project Management [0%]
+    - State "ASSIGN"     from "TODO"       [2020-03-10 Tue 20:54] \\
+      Omar Alkersh
+**** TODO Write .gitignore
+**** TODO Remove any extra files from repo
+**** TODO Write makefile
+*** ASSIGN Algorithm Implementation [0%]
+    DEADLINE: <2020-03-20 Fri>
+    - State "ASSIGN"     from "TODO"       [2020-03-10 Tue 20:55] \\
+      Nihal Azavedo
+    - Can be a class with just abstract methods, with no constructor. It can be private.
+    - Let me know if you want to add some tasks
+**** TODO Decide on implementation
+     - maybe write some pseudo code?..
+*** ASSIGN SQLite Driver
+    DEADLINE: <2020-03-20 Fri>
+    - State "ASSIGN"     from "TODO"       [2020-03-10 Tue 20:56] \\
+      Mike Tee
+    - Needs to be a singleton
+*** ASSIGN ADTs [0%]
+    DEADLINE: <2020-03-20 Fri>
+    - State "ASSIGN"     from "ASSIGN"     [2020-03-10 Tue 20:56] \\
+      Jingze Dai "David"
+**** TODO Implement NodeT
+**** TODO Implement PathT
+*** ASSIGN CLI Implementation
+    DEADLINE: <2020-03-20 Fri>
+    - State "ASSIGN"     from "TODO"       [2020-03-10 Tue 20:57] \\
+      Harshveer Gaba
+    - Needs to be a singleton
