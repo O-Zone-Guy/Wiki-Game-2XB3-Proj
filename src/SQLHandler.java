@@ -7,13 +7,13 @@ import java.sql.Statement;
 import java.util.Set;
 import java.util.Map;
 
-public class SQLite3
+public class SQLHandler 
 {
 
   Connection conn = null;
   String path = "";
 
-  public SQLite3(String db_path)
+  public SQLHandler(String db_path)
   {
     path = db_path;
   }
