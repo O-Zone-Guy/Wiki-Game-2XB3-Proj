@@ -2,7 +2,7 @@
 #+Description: General plan for 2XB3 final project. Written in java.
 #+options: toc:nil
 #+FILETAGS: 2xb3
-#+TODO: TODO ASSIGN(@) | DONE CANCELLED(@)
+#+TODO: TODO(t) ASSIGN(s@) | DONE(d) CANCELLED(c@)
 
 * Things to add here                                               :noexport:
 * TODO Finish Project [66%]
@@ -66,13 +66,17 @@
     :LOGBOOK:
     CLOCK: [2020-03-10 Tue 20:55]--[2020-03-10 Tue 20:57] =>  0:02
     :END:
-*** ASSIGN General Project Management [66%]
+*** ASSIGN General Project Management [60%]
     - State "ASSIGN"     from "TODO"       [2020-03-10 Tue 20:54] \\
       Omar Alkersh
 **** DONE Write .gitignore
      CLOSED: [2020-03-12 Thu 22:56]
 **** DONE Remove any extra files from repo
-**** TODO Write makefile
+**** DONE Write makefile
+     CLOSED: [2020-03-12 Thu 23:23]
+**** TODO Look into CI in gitlab [0%]
+***** TODO  Create a runner
+***** TODO Create a .gitlab-ci.yml
 *** ASSIGN Algorithm Implementation [0%]
     DEADLINE: <2020-03-20 Fri>
     - State "ASSIGN"     from "TODO"       [2020-03-10 Tue 20:55] \\
