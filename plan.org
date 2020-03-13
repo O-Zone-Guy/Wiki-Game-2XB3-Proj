@@ -66,11 +66,12 @@
     :LOGBOOK:
     CLOCK: [2020-03-10 Tue 20:55]--[2020-03-10 Tue 20:57] =>  0:02
     :END:
-*** ASSIGN General Project Management [0%]
+*** ASSIGN General Project Management [66%]
     - State "ASSIGN"     from "TODO"       [2020-03-10 Tue 20:54] \\
       Omar Alkersh
-**** TODO Write .gitignore
-**** TODO Remove any extra files from repo
+**** DONE Write .gitignore
+     CLOSED: [2020-03-12 Thu 22:56]
+**** DONE Remove any extra files from repo
 **** TODO Write makefile
 *** ASSIGN Algorithm Implementation [0%]
     DEADLINE: <2020-03-20 Fri>
