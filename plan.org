@@ -104,3 +104,12 @@
     - State "ASSIGN"     from "TODO"       [2020-03-10 Tue 20:57] \\
       Harshveer Gaba
     - Needs to be a singleton
+* Member roles
+| Name                 | Role               |
+|----------------------+--------------------|
+| /                    | <                  |
+| Harshveer Singh Gaba | UI Designer        |
+| Jingze Dai           | ADTs               |
+| Mike Tee             | SQL Interface      |
+| Nihal Azavedo        | Graphing algorithm |
+| Omar Alkresh         | Project Management |
