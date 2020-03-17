@@ -66,7 +66,7 @@
     :LOGBOOK:
     CLOCK: [2020-03-10 Tue 20:55]--[2020-03-10 Tue 20:57] =>  0:02
     :END:
-*** ASSIGN General Project Management [60%]
+*** ASSIGN General Project Management [100%]
     - State "ASSIGN"     from "TODO"       [2020-03-10 Tue 20:54] \\
       Omar Alkersh
 **** DONE Write .gitignore
@@ -74,7 +74,10 @@
 **** DONE Remove any extra files from repo
 **** DONE Write makefile
      CLOSED: [2020-03-12 Thu 23:23]
-**** TODO Look into CI in gitlab [0%]
+**** CANCELLED Look into CI in gitlab [0%]                          :ARCHIVE:
+     CLOSED: [2020-03-17 Tue 00:12]
+     - State "CANCELLED"  from "TODO"       [2020-03-17 Tue 00:12] \\
+       Require Kubernetes, actual money, or installation on a server to run 24/7.
 ***** TODO  Create a runner
 ***** TODO Create a .gitlab-ci.yml
 *** ASSIGN Algorithm Implementation [0%]
