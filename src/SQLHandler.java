@@ -142,7 +142,7 @@ public class SQLHandler
     }
 
     public static void main(String[] args) throws SQLException {
-        SQLHandler sql = new SQLHandler("database.db3");
+        SQLHandler sql = new SQLHandler("data/database.db3");
         sql.open();
 
         System.out.print(sql.getPageId("Guerrilla gig") + " to ");
