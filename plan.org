@@ -53,7 +53,7 @@
        - set of neighbouring nodes numbers, not ADT
 *** DONE Split req into functional and non-functional bullet points
     CLOSED: [2020-03-10 Tue 20:51]
-** TODO Implement program [37%]
+** TODO Implement program [30%]
 *** DONE Assign implementation
     CLOSED: [2020-03-10 Tue 20:50] DEADLINE: <2020-03-13
 *** DONE Distribute modules work
@@ -80,7 +80,7 @@
        Require Kubernetes, actual money, or installation on a server to run 24/7.
 ***** TODO  Create a runner
 ***** TODO Create a .gitlab-ci.yml
-*** ASSIGN Algorithm Implementation [0%]
+*** ASSIGN Graphing algorithm [0%]
     DEADLINE: <2020-03-20 Fri>
     - State "ASSIGN"     from "TODO"       [2020-03-10 Tue 20:55] \\
       Nihal Azavedo
@@ -88,6 +88,14 @@
     - Let me know if you want to add some tasks
 **** TODO Decide on implementation
      - maybe write some pseudo code?..
+*** ASSIGN Search algorithm
+    DEADLINE: <2020-03-20 Fri>
+    - State "ASSIGN"     from "TODO"       [2020-03-18 Wed 00:12] \\
+      Omar Alkersh
+*** ASSIGN Sort Algorithm
+    DEADLINE: <2020-03-20 Fri>
+    - State "ASSIGN"     from "TODO"       [2020-03-18 Wed 00:13] \\
+      Omar Alkersh
 *** ASSIGN SQLite Driver
     DEADLINE: <2020-03-20 Fri>
     - State "ASSIGN"     from "TODO"       [2020-03-10 Tue 20:56] \\
