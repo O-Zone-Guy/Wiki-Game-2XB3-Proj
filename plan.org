@@ -121,3 +121,7 @@
 | Mike Tee             | SQL Interface      |
 | Nihal Azavedo        | Graphing algorithm |
 | Omar Alkresh         | Project Management |
+* Meetings
+** Discussing the interface
+   - <2020-03-18 Wed 22:06>
+   - Discussing the different "screens" provided by the UI for the user to input the data.
