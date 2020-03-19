@@ -20,10 +20,11 @@ JVM = java
 
 # need to list all our java source files
 CLASSES= src/SQLHandler.java \
-         src/Node.Java \
-         src/Path.java \
-         src/Traverser.java \
-         src/UInterface.java \
+#         src/Node.Java \
+#         src/Path.java \
+#         src/Traverser.java \
+#         src/UInterface.java \
+
 
 # sets default entry for makefile
 default: classes
