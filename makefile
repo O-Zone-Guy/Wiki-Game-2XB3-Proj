@@ -7,7 +7,7 @@
 # All required libraries are should be present in lib/ directory
 
 JFLAGS = -g
-JCLASS = ./src:.:./lib
+JCLASS = -cp ./src:.:./lib/sqlite-jdbc-3.30.1.jar
 JC = javac
 JVM = java
 
