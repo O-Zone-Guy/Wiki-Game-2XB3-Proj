@@ -1,7 +1,17 @@
+# database files
 *.db3
 *.db
 *.txt
+
+# misc files
 auto/*
 *.tex
 *~
 *.class
+*.xmi
+html/*
+latex/*
+
+## eclipse files
+.classpath
+.project
