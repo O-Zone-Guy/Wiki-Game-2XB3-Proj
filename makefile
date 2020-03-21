@@ -43,3 +43,6 @@ docs:
 clean:
 	find . -iname "*.class" -exec rm -rf {} \;
 	find . -iname "*\~" -exec rm {} \;
+	rm -rf html
+	rm -rf latex
+	rm plan.tex
