@@ -53,7 +53,7 @@
        - set of neighbouring nodes numbers, not ADT
 *** DONE Split req into functional and non-functional bullet points
     CLOSED: [2020-03-10 Tue 20:51]
-** TODO Implement program [30%]
+** TODO Implement program [60%]
 *** DONE Assign implementation
     CLOSED: [2020-03-10 Tue 20:50] DEADLINE: <2020-03-13
 *** DONE Distribute modules work
@@ -66,7 +66,7 @@
     :LOGBOOK:
     CLOCK: [2020-03-10 Tue 20:55]--[2020-03-10 Tue 20:57] =>  0:02
     :END:
-*** ASSIGN General Project Management [100%]
+*** ASSIGN General Project Management [80%]
     - State "ASSIGN"     from "TODO"       [2020-03-10 Tue 20:54] \\
       Omar Alkersh
 **** DONE Write .gitignore
@@ -74,6 +74,7 @@
 **** DONE Remove any extra files from repo
 **** DONE Write makefile
      CLOSED: [2020-03-12 Thu 23:23]
+**** TODO Add a doxyegn config file
 **** CANCELLED Look into CI in gitlab [0%]                          :ARCHIVE:
      CLOSED: [2020-03-17 Tue 00:12]
      - State "CANCELLED"  from "TODO"       [2020-03-17 Tue 00:12] \\
@@ -88,12 +89,12 @@
     - Let me know if you want to add some tasks
 **** TODO Decide on implementation
      - maybe write some pseudo code?..
-*** ASSIGN Search algorithm
-    DEADLINE: <2020-03-20 Fri>
+*** DONE Search algorithm
+    CLOSED: [2020-03-20 Fri 21:11] DEADLINE: <2020-03-20 Fri>
     - State "ASSIGN"     from "TODO"       [2020-03-18 Wed 00:12] \\
       Omar Alkersh
-*** ASSIGN Sort Algorithm
-    DEADLINE: <2020-03-20 Fri>
+*** DONE Sort Algorithm
+    CLOSED: [2020-03-20 Fri 21:11] DEADLINE: <2020-03-20 Fri>
     - State "ASSIGN"     from "TODO"       [2020-03-18 Wed 00:13] \\
       Omar Alkersh
 *** ASSIGN SQLite Driver
@@ -101,26 +102,28 @@
     - State "ASSIGN"     from "TODO"       [2020-03-10 Tue 20:56] \\
       Mike Tee
     - Needs to be a singleton
-*** ASSIGN ADTs [0%]
-    DEADLINE: <2020-03-20 Fri>
+*** DONE ADTs [100%]
+    CLOSED: [2020-03-20 Fri 21:11] DEADLINE: <2020-03-20 Fri>
     - State "ASSIGN"     from "ASSIGN"     [2020-03-10 Tue 20:56] \\
       Jingze Dai "David"
-**** TODO Implement NodeT
-**** TODO Implement PathT
-*** ASSIGN CLI Implementation
+**** DONE Implement NodeT
+     CLOSED: [2020-03-20 Fri 21:11]
+**** DONE Implement PathT
+     CLOSED: [2020-03-20 Fri 21:11]
+*** ASSIGN UI Implementation
     DEADLINE: <2020-03-20 Fri>
     - State "ASSIGN"     from "TODO"       [2020-03-10 Tue 20:57] \\
       Harshveer Gaba
     - Needs to be a singleton
 * Member roles
-| Name                 | Role               |
-|----------------------+--------------------|
-| /                    | <                  |
-| Harshveer Singh Gaba | UI Designer        |
-| Jingze Dai           | ADTs               |
-| Mike Tee             | SQL Interface      |
-| Nihal Azavedo        | Graphing algorithm |
-| Omar Alkresh         | Project Management |
+| Name                 | Role                                               |
+|----------------------+----------------------------------------------------|
+| /                    | <                                                  |
+| Harshveer Singh Gaba | UI Designer                                        |
+| Jingze Dai           | ADTs                                               |
+| Mike Tee             | SQL Interface                                      |
+| Nihal Azavedo        | Graphing algorithm                                 |
+| Omar Alkresh         | Project Management, and search and sort algorithms |
 * Meetings
 ** Discussing the interface
    - <2020-03-18 Wed 22:06>
