@@ -9,10 +9,6 @@ import java.util.HashSet;
  */
 public class Algorithms{
 
-    private Algorithms(){
-
-    }
-
     /**
        @brief Sorts a set of paths based on the names of the pages in the path.
        @param paths ∶ Collection<PathT> The set of paths to sort.
