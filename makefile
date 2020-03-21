@@ -32,8 +32,8 @@ default: classes
 classes: $(CLASSES:.java=.class)
 
 # consider using doxygen
-docs:
-	doxygen Doxyfile
+#docs:
+#	doxygen Doxyfile
 
 # add a rule for testing
 #test: src/SQLHandler.class
