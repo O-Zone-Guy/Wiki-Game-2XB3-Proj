@@ -20,9 +20,9 @@ JVM = java
 
 # need to list all our java source files
 CLASSES= src/SQLHandler.java \
-#         src/Node.Java \
-#         src/Path.java \
-#         src/Traverser.java \
+         src/NodeT.java \
+         src/PathT.java \
+         src/Algorithms.java \
 #         src/UInterface.java \
 
 
