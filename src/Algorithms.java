@@ -45,6 +45,13 @@ public class Algorithms{
         return sortedPaths;
     }
 
+    /**
+       @brief Search the paths for a string.
+       @details Keeps the paths that contain nodes that contain the given string in its name.
+       @param paths The collection of paths to search.
+       @param string The string to search for.
+       @return Paths that contain the given string.
+     */
     public static Collection<PathT> searchPaths(Collection<PathT> paths, String string){
         HashSet<PathT> filteredPaths = new HashSet<>(paths);
         for(PathT path: filteredPaths)
