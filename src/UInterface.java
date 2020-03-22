@@ -19,7 +19,6 @@ import javax.swing.JOptionPane;
 
 /**
  * @brief User Interface class
- *
  */
 public class UInterface {
 
@@ -31,7 +30,7 @@ public class UInterface {
 	int pageOneId, pageTwoId;
 
 	/**
-	 * @brief Launching the application and displaying the fram
+	 * @brief Launching the application and displaying the form
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -65,25 +64,25 @@ public class UInterface {
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(false);
 		
-		// Creating a new text field for input
+		// Creating a new text field for input for page 1
 		t1 = new JTextField();
 		t1.setBounds(62, 84, 152, 20);
 		frame.getContentPane().add(t1);
 		t1.setColumns(10);
 		
-		// Creating a new text field for input
+		// Creating a new text field for input for page 2
 		t2 = new JTextField();
 		t2.setColumns(10);
 		t2.setBounds(361, 84, 152, 20);
 		frame.getContentPane().add(t2);
 		
-		// Creating a label to provide a label for the first text field
+		// Creating a label to provide a description for the first text field
 		JLabel l1 = new JLabel("Insert Page 1");
 		l1.setHorizontalAlignment(SwingConstants.CENTER);
 		l1.setBounds(62, 59, 152, 14);
 		frame.getContentPane().add(l1);
 		
-		// Creating a label to provide a label for the second text field
+		// Creating a label to provide a description for the second text field
 		JLabel l2 = new JLabel("Insert Page 2");
 		l2.setHorizontalAlignment(SwingConstants.CENTER);
 		l2.setBounds(361, 59, 152, 14);
@@ -91,6 +90,7 @@ public class UInterface {
 		
 		// Creating a new button for execution
 		JButton btnNewButton = new JButton("Go!");
+		// Adding an ActionListener to the button for it to access ButtonClicked functionality
 		btnNewButton.addActionListener(new ActionListener() {
 			/**
 			 * @brief Retrieves data from two text fields and performs functions
