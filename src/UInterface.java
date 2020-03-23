@@ -115,6 +115,15 @@ public class UInterface {
 			public void actionPerformed(ActionEvent e) {
 				pageOne = t1.getText();
 				pageTwo = t2.getText();
+				pageTwo_determined = (String) c1.getSelectedItem();
+				
+				if (pageTwo_determined == null && pageTwo == null) {
+					JOptionPane.showMessageDialog(null, "Please input an End Page or select one from the Predetermined Destinations");
+				}
+				
+				if (pageOne == null) {
+					JOptionPane.showMessageDialog(null, "Please input a Start Page");
+				}
 				
 				SQLHandler sql = new SQLHandler("data/database.db3");
 				try {
@@ -128,20 +137,10 @@ public class UInterface {
 					JOptionPane.showMessageDialog(null, "End Page is invalid");
 				}
 				
-				pageTwo_determined = (String) c1.getSelectedItem();
-				
 				try {
 					pageTwo_determinedId = sql.getPageId(pageTwo_determined);
 				} catch (SQLException e1) {
 					JOptionPane.showMessageDialog(null, "Predetermined End Page is invalid");
-				}
-				
-				if (pageTwo_determined == null && pageTwo == null) {
-					JOptionPane.showMessageDialog(null, "Please input an End Page or select one from the Predetermined Destinations");
-				}
-				
-				if (pageOne == null) {
-					JOptionPane.showMessageDialog(null, "Please input a Start Page");
 				}
 				
 				if (pageTwo_determined == null && pageTwo != null) {
