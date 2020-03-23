@@ -5,7 +5,6 @@
    @date 2020-03-22
  */
 
-
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -117,11 +116,11 @@ public class UInterface {
 				pageTwo = t2.getText();
 				pageTwo_determined = (String) c1.getSelectedItem();
 				
-				if (pageTwo_determined == null && pageTwo == null) {
+				if (pageTwo_determined == null && pageTwo.isEmpty() == true) {
 					JOptionPane.showMessageDialog(null, "Please input an End Page or select one from the Predetermined Destinations");
 				}
 				
-				if (pageOne == null) {
+				if (pageOne.isEmpty() == true) {
 					JOptionPane.showMessageDialog(null, "Please input a Start Page");
 				}
 				
@@ -136,7 +135,6 @@ public class UInterface {
 				} catch (SQLException e1) {
 					JOptionPane.showMessageDialog(null, "End Page is invalid");
 				}
-				
 				try {
 					pageTwo_determinedId = sql.getPageId(pageTwo_determined);
 				} catch (SQLException e1) {
@@ -152,7 +150,7 @@ public class UInterface {
 				}
 			}
 		});
-		btnNewButton.setBounds(214, 337, 89, 23);
+		btnNewButton.setBounds(214, 314, 89, 23);
 		frame.getContentPane().add(btnNewButton);
 		
 		JLabel lblNewLabel_1 = new JLabel("Predetermined Destination");
@@ -162,7 +160,7 @@ public class UInterface {
 		
 		JLabel lblNewLabel = new JLabel("//TODO: Add Graph");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(10, 115, 502, 211);
+		lblNewLabel.setBounds(10, 115, 502, 188);
 		frame.getContentPane().add(lblNewLabel);
 	}
 }
