@@ -1,3 +1,10 @@
+/**
+ @brief A module that provides an interface to the SQLite3 database.
+ @file SQLHandler.java
+ @author Mike Tee - teemh
+ @date 2020-03-23
+ */
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -6,18 +13,17 @@ import java.sql.Statement;
 
 import java.util.*;
 
+/**
+ @brief A singleton class that gets page name, id, categories and neighbours from database.
+ */
 public class SQLHandler
 {
-    private Connection conn = null;
-    private String path = "";
-    private Statement statement = null;
+    private static String path = "data/database.db3";
+    private static Connection conn = null;
+    private static Statement statement = null;
 
-    public SQLHandler(String db_path)
-    {
-        path = db_path;
-    }
-
-    public void open() {
+    /* Opens database connection. */
+    private static void open() {
         try {
             conn = DriverManager.getConnection("jdbc:sqlite:" + path);
             statement = conn.createStatement();
@@ -28,134 +34,84 @@ public class SQLHandler
         }
     }
 
-    public boolean close() {
-        try {
-            if(conn != null) conn.close();
-            return true;
-        }
-        catch(SQLException e) {
-            System.err.println(e.getMessage());
-        }
-        return false;
+    /* Check if connection is open */
+    private static boolean closed()
+    {
+        return conn == null && statement == null;
     }
 
-    private ResultSet query(String s) throws SQLException {
-        return statement.executeQuery(s);
+    /* Get list of neighbors from database */
+    private static String getList(int id) throws SQLException {
+        if (closed()) open();
+        ResultSet result = statement.executeQuery("SELECT list FROM edgelist WHERE id = " + id + ";");
+        return result.getString("list");
     }
 
-    public String getList(int id) throws SQLException {
-        ResultSet result = query("SELECT list FROM edgelist WHERE id = " + id + ";");
-        if (!result.isClosed()){
-            return result.getString("list");
+    /**
+     @brief Get id of page from database.
+     @param name: String Name of page.
+     @return Returns id of page. Returns -1 if no page with name exists found.
+     */
+    public static int getPageId(String name) throws SQLException {
+        if (closed()) open();
+        ResultSet result = statement.executeQuery("SELECT id FROM page WHERE name LIKE '" + name +"' LIMIT 1;");
+        return result.getInt("id");
+    }
+
+    /**
+     @brief Get page name
+     @param id: int Page id.
+     @return Returns name of page or null if no page was found.
+     */
+    public static String getPageName(int id) throws SQLException {
+        if (closed()) open();
+        ResultSet result = statement.executeQuery("SELECT name FROM page WHERE id=" + id + ";");
+        return result.getString("name");
+    }
+
+    /**
+     @brief Create new Node with from page.
+     @param id: int Page id.
+     @return Returns new Node.
+     */
+    public static NodeT getNode(int id) throws SQLException {
+        ArrayList<Integer> neighbours = new ArrayList<>();
+        String list = getList(id);
+        for (String n : list.split(" "))
+        {
+            neighbours.add(Integer.parseInt(n));
         }
-        return null;
+        return new NodeT(id, getPageName(id), neighbours);
     }
 
-    public int getPageId(String name) throws SQLException {
-        ResultSet result = query("SELECT id FROM page WHERE name LIKE '" + name +"' LIMIT 1;");
-        if (!result.isClosed()){
-            return result.getInt("id");
-        }
-        return -1;
-    }
-
-    public String getName(int id) throws SQLException {
-        ResultSet result = query("SELECT name FROM page WHERE id=" + id + ";");
-        if (!result.isClosed()){
-            return result.getString("name");
-        }
-        return null;
-    }
-
-    public int countEdges() throws SQLException {
-        ResultSet result = query("SELECT COUNT(*) as count FROM edgelist;");
-        if (!result.isClosed()){
-            return result.getInt("count");
-        }
-        return -1;
-    }
-
-    public ArrayList<String> getCategories(int id) throws SQLException {
-        ResultSet result = query("SELECT p.name FROM page p INNER JOIN category_page cp ON p.id = cp.page_id INNER JOIN category c ON c.id = cp.category_id WHERE c.id = " + id + " GROUP BY p.id, p.name");
+    /**
+     @brief Get page categories
+     @param id: int Page id.
+     @return Returns list of categories.
+     */
+    public static ArrayList<String> getCategories(int id) throws SQLException {
+        if (closed()) open();
+        ResultSet result = statement.executeQuery("SELECT c.name FROM category c " +
+                                                    "INNER JOIN category_page cp ON cp.category_id = c.id " +
+                                                    "INNER JOIN page p ON p.id = cp.page_id " +
+                                                    "WHERE p.id = " + id + " " +
+                                                    "GROUP BY c.id, c.name");
         ArrayList<String> cats = new ArrayList<>();
         while (result.next())
             cats.add(result.getString("name"));
         return cats;
     }
 
-    public ArrayList<Integer> bfs(int start, int end) throws SQLException{
-        boolean[] visited = new boolean[countEdges()];
-        Queue<Integer> queue = new LinkedList<>();
-        ArrayList<Integer> path = new ArrayList<>();
-
-        visited[start] = true;
-        queue.add(start);
-
-        while(!queue.isEmpty()) {
-            if (visited[end]) {
-                path.add(end);
-                return path;
-            }
-
-            int next = queue.peek();
-            queue.remove();
-
-            String list = getList(next);
-            path.add(next);
-            for (String part : list.split(" ")) {
-                int node = Integer.parseInt(part);
-
-                if (!visited[node]) {
-                    visited[node] = true;
-                    queue.add(node);
-                }
-            }
-        }
-        return null;
-    }
-
-    public ArrayList<Integer> dfs(int start, int end) throws SQLException {
-        boolean[] visited = new boolean[countEdges()];
-        Stack<Integer> stack = new Stack<>();
-        ArrayList<Integer> path = new ArrayList<>();
-
-        stack.push(start);
-
-        while (!stack.isEmpty()){
-            int next = stack.pop();
-            if (!visited[next]) {
-                visited[next] = true;
-
-                String list = getList(next);
-                path.add(next);
-                for (String part : list.split(" ")){
-                    int node = Integer.parseInt(part);
-                    if (node == end) {
-                        path.add(end);
-                        return path;
-                    }
-                    stack.push(node);
-                }
-            }
-        }
-        return null;
-    }
-
+    /* Examples */
     public static void main(String[] args) throws SQLException {
-        SQLHandler sql = new SQLHandler("data/database.db3");
-        sql.open();
 
-        System.out.print(sql.getPageId("Guerrilla gig") + " to ");
-        System.out.println(sql.getPageId("Antithesis"));
+        System.out.println(SQLHandler.getPageId("Antithesis"));
+        System.out.println(SQLHandler.getPageName(64323));
+        System.out.println(SQLHandler.getCategories(64323));
 
-        ArrayList<Integer> path = sql.bfs(69,64323);
+        NodeT node = SQLHandler.getNode(64323);
+        System.out.println(node.getNeighbours());
 
-        for(int node : path)
-        {
-            System.out.println(sql.getName(node));
-        }
-
-        //System.out.println(sql.getName(1));
-        //System.out.println(sql.getCategories(1));
     }
 }
+

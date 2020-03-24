@@ -7,7 +7,8 @@
 # All required libraries are should be present in lib/ directory
 
 JFLAGS = -g
-JCLASS = -cp ./src:.:./lib/sqlite-jdbc-3.30.1.jar
+# JCLASS = -cp ./src:.:./lib/sqlite-jdbc-3.30.1.jar
+JCLASS = -cp ./src:./src/tests:.:/usr/share/java/junit4-4.12.jar:./lib/sqlite-jdbc-3.30.1.jar
 JC = javac
 JVM = java
 
@@ -25,19 +26,28 @@ CLASSES= src/SQLHandler.java \
          src/Algorithms.java \
 #         src/UInterface.java \
 
+# MIKE: test files
+TESTS= src/tests/TestSQLHandler.java \
+			 src/tests/AllTests.java \
 
 # sets default entry for makefile
 default: classes
 
 classes: $(CLASSES:.java=.class)
 
+# MIKE: run tests
+tests: $(TESTS:.java=.class)
+
+test: src/tests/AllTests.class
+	$(JVM) $(JCLASS) org.junit.runner.JUnitCore AllTests
+
 # consider using doxygen
 docs:
 	doxygen Doxyfile
 
-# add a rule for testing
-#test: src/SQLHandler.class
-#	$(JVM) $(JCLASS) SQLHandler
+# MIKE: temp rule for database testing
+dbtest: src/SQLHandler.class
+	$(JVM) $(JCLASS) SQLHandler
 
 # cleans project
 clean:
