@@ -49,7 +49,7 @@ public class SQLHandler
 
     /**
      @brief Get id of page from database.
-     @param name∶ String Name of page.
+     @param name: String Name of page.
      @return Returns id of page. Returns -1 if no page with name exists found.
      */
     public static int getPageId(String name) throws SQLException {
@@ -60,7 +60,7 @@ public class SQLHandler
 
     /**
      @brief Get page name
-     @param id∶ int Page id.
+     @param id: int Page id.
      @return Returns name of page or null if no page was found.
      */
     public static String getPageName(int id) throws SQLException {
@@ -71,7 +71,7 @@ public class SQLHandler
 
     /**
      @brief Create new Node with from page.
-     @param id∶ int Page id.
+     @param id: int Page id.
      @return Returns new Node.
      */
     public static NodeT getNode(int id) throws SQLException {
@@ -86,7 +86,7 @@ public class SQLHandler
 
     /**
      @brief Get page categories
-     @param id∶ int Page id.
+     @param id: int Page id.
      @return Returns list of categories.
      */
     public static ArrayList<String> getCategories(int id) throws SQLException {
