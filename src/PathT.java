@@ -54,4 +54,44 @@ public class PathT {
                 return true;
         return false;
     }
+
+
+    /**
+       @brief Checks if two PathT objects are equal.
+       @param The object to compare to.
+       @return Whether the two objects are equal.
+     */
+    public boolean equals(Object other){
+        if (this == other)
+            return true;
+        if (! (other instanceof PathT))
+            return false;
+        PathT path2 = (PathT) other;
+        return this.path.equals(path2.getPath());
+    }
+
+    /**
+       @brief The hash function for PathT
+       @return The hash of PathT
+     */
+    public int hashCode(){
+        int hash = 0;
+        for(int i = 0; i < path.size(); i++){
+            hash+=path.get(i).hashCode()*primeNumber(i+1);
+        }
+        return hash;
+    }
+
+    private Integer primeNumber(int n){
+        int num=1, count=0, i;
+        while (count < n){
+            num++;
+            for (i = 2; i <= num; i++)
+                if (num % i == 0)
+                    break;
+            if (i == num)
+                count = count+1;
+        }
+        return num;
+    }
 }

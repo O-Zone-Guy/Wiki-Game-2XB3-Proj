@@ -51,4 +51,25 @@ public class NodeT {
 		return neighbours;
 	}
 
+    /**
+       @brief Checks if two NodeT objects are equal.
+       @param The object to compare to.
+       @return Whether the two objects are equal.
+    */
+    public boolean equals(Object other){
+        if (this == other)
+            return true;
+        if (! (other instanceof NodeT))
+            return false;
+        NodeT node2 = (NodeT) other;
+        return this.id == node2.id;
+    }
+    /**
+       @brief The Hash function for the node
+       @return The hash, its id.
+     */
+    public int hashCode(){
+        return id;
+    }
+
 }
