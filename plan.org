@@ -53,7 +53,7 @@
        - set of neighbouring nodes numbers, not ADT
 *** DONE Split req into functional and non-functional bullet points
     CLOSED: [2020-03-10 Tue 20:51]
-** TODO Implement program [70%]
+** TODO Implement program [80%]
 *** DONE Assign implementation
     CLOSED: [2020-03-10 Tue 20:50] DEADLINE: <2020-03-13
 *** DONE Distribute modules work
@@ -99,8 +99,8 @@
     CLOSED: [2020-03-20 Fri 21:11] DEADLINE: <2020-03-20 Fri>
     - State "ASSIGN"     from "TODO"       [2020-03-18 Wed 00:13] \\
       Omar Alkersh
-*** ASSIGN SQLite Driver
-    DEADLINE: <2020-03-20 Fri>
+*** DONE SQLite Driver
+    CLOSED: [2020-03-24 Tue 23:49] DEADLINE: <2020-03-20 Fri>
     - State "ASSIGN"     from "TODO"       [2020-03-10 Tue 20:56] \\
       Mike Tee
     - Needs to be a singleton
