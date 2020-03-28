@@ -1,13 +1,111 @@
-
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
 
 /**
    @brief A class responsible for providing the different algorithm implementations used in the project
    All methods should be static.
  */
 public class Algorithms{
+
+
+    /**
+       @brief finds the set of shortest path between src and dest.
+
+       @param src The number of the source node.
+       @param dest the number of the destination node.
+
+       @return The set of shortest paths.
+     * @throws SQLException
+     */
+    public static Set<PathT> getPaths(int src, int dest) throws SQLException{
+        Set<PathT>              paths = new HashSet<>(); // the set of paths to be returned.
+
+        if (src == dest){
+            PathT path = new PathT();
+            NodeT node = SQLHandler.getNode(src);
+            path.addPage(node);
+            paths.add(path);
+            return paths;
+        }
+
+        HashMap<NodeT, NodeT>   prev  = new HashMap<>(); // stores the previous node in the shortest path
+        HashMap<NodeT, Integer> dist  = new HashMap<>(); // the distance from the source node
+
+        Queue<NodeT> toVisit = new LinkedList<>(); // a queue of the nodes to be visited.
+
+        NodeT srcN;
+        try{
+            srcN = SQLHandler.getNode(src);
+        } catch (SQLException e){
+            throw new SQLException("Source node not found");
+        }
+
+        prev.put(srcN, srcN);
+        dist.put(srcN,  0);
+
+        toVisit.add(srcN);
+
+        int foundLevel = Integer.MAX_VALUE; // keeps track at which level the destination was found.
+
+        while (!toVisit.isEmpty()){
+            NodeT v = toVisit.poll(); // get node to process.
+            // don't bother checking neighbours if dest is found on a lower level.
+            if (foundLevel < dist.get(v.getPageNumber()))
+                continue;
+
+            // Iterate over neighbours
+            for (int w: v.getNeighbours()){
+                NodeT nodeW = SQLHandler.getNode(w); // get node for each neighbour
+                if (w == dest){ // found the destination.
+                    if (dist.get(v.getPageNumber()) > foundLevel) // current distance is longer than the one it was found at, skip.
+                        break;
+                    foundLevel = dist.get(v.getPageNumber());
+                    prev.put(nodeW, v);
+                    paths.add(getPath(dest, prev)); // get path and add it to set.
+                }
+                if (foundLevel <= dist.get(v.getPageNumber())) // if we already found the dest, don't add anything to queue
+                    continue;
+                // adding node to queue
+                // check if we found a shorter path the node
+                if (dist.get(nodeW) != null){
+                    int temp = dist.get(v) + 1;
+                    if (temp >= dist.get(w))
+                        continue;
+                }
+
+                // if not, add it to the queue and set prev and dist maps.
+                toVisit.add(nodeW);
+                dist.put(nodeW, dist.get(v) + 1);
+                prev.put(nodeW, v);
+            }
+        }
+
+        return paths;
+    }
+
+    // A function to get the path from a prev hashmap
+    private static PathT getPath(int dest, Map<NodeT, NodeT> prev) throws SQLException {
+        ArrayList<NodeT> pathList = new ArrayList<>();
+
+        NodeT n = SQLHandler.getNode(dest);
+        while (!n.equals(prev.get(n))){
+            pathList.add(0, n);
+            n = prev.get(n);
+        }
+
+        PathT path = new PathT();
+        path.setPath(pathList);
+
+        return path;
+
+    }
 
     /**
        @brief Sorts a set of paths based on the names of the pages in the path.
