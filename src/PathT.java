@@ -6,12 +6,13 @@
  */
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
    @brief A class to represent a path from one node to another.
  */
 public class PathT {
-    private ArrayList<NodeT> path;
+    private List<NodeT> path;
 
     /**
        @brief The constructor for PathT.
@@ -23,7 +24,7 @@ public class PathT {
     /**
      * @return the path
      */
-    public ArrayList<NodeT> getPath() {
+    public List<NodeT> getPath() {
         return path;
     }
 
@@ -33,6 +34,10 @@ public class PathT {
      */
     public void addPage(NodeT node){
         path.add(node);
+    }
+
+    public void setPath(List<NodeT> p){
+        this.path = p;
     }
 
     /**
