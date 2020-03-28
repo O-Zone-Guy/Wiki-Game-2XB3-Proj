@@ -50,10 +50,7 @@ public class Algorithms{
      */
     public static Collection<PathT> searchPaths(Collection<PathT> paths, String string){
         HashSet<PathT> filteredPaths = new HashSet<>(paths);
-        for(PathT path: filteredPaths)
-            if(!path.contains(string))
-                filteredPaths.remove(path);
-
+        filteredPaths.removeIf(p -> !p.contains(string));
         return filteredPaths;
     }
 
@@ -65,5 +62,4 @@ public class Algorithms{
 
         return pathString;
     }
-
 }
