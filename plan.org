@@ -6,10 +6,10 @@
 #+latex_header: \usepackage[a4paper, margin=1in]{geometry} \usepackage[utf8]{inputenc}
 
 * Things to add here                                               :noexport:
-* TODO Finish Project [66%]
+* TODO Finish Project [83%]
   DEADLINE: <2020-04-06 Mon>
   :PROPERTIES:
-  :COOKIE_DATA: todo recursice
+  :COOKIE_DATA: todo recursive
   :END:
   :LOGBOOK:
   CLOCK: [2020-03-10 Tue 20:55]--[2020-03-10 Tue 20:55] =>  0:00
@@ -85,13 +85,14 @@
        Require Kubernetes, actual money, or installation on a server to run 24/7.
 ***** TODO  Create a runner
 ***** TODO Create a .gitlab-ci.yml
-*** DONE Graphing algorithm [0%]
+*** DONE Graphing algorithm [100%]
     CLOSED: [2020-03-27 Fri 21:24] DEADLINE: <2020-03-20 Fri>
     - State "ASSIGN"     from "TODO"       [2020-03-10 Tue 20:55] \\
       Nihal Azavedo
     - Can be a class with just abstract methods, with no constructor. It can be private.
     - Let me know if you want to add some tasks
-**** TODO Decide on implementation
+**** DONE Decide on implementation
+     CLOSED: [2020-03-27 Fri 21:45]
      - maybe write some pseudo code?..
 *** DONE Search algorithm
     CLOSED: [2020-03-20 Fri 21:11] DEADLINE: <2020-03-20 Fri>
