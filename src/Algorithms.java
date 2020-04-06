@@ -55,28 +55,30 @@ public class Algorithms{
         int foundLevel = Integer.MAX_VALUE; // keeps track at which level the destination was found.
 
         while (!toVisit.isEmpty()){
+
             NodeT v = toVisit.poll(); // get node to process.
+
             // don't bother checking neighbours if dest is found on a lower level.
-            if (foundLevel < dist.get(v.getPageNumber()))
+            if (foundLevel < dist.get(v))
                 continue;
 
             // Iterate over neighbours
             for (int w: v.getNeighbours()){
                 NodeT nodeW = SQLHandler.getNode(w); // get node for each neighbour
                 if (w == dest){ // found the destination.
-                    if (dist.get(v.getPageNumber()) > foundLevel) // current distance is longer than the one it was found at, skip.
+                    if (dist.get(v) > foundLevel) // current distance is longer than the one it was found at, skip.
                         break;
-                    foundLevel = dist.get(v.getPageNumber());
+                    foundLevel = dist.get(v);
                     prev.put(nodeW, v);
                     paths.add(getPath(dest, prev)); // get path and add it to set.
                 }
-                if (foundLevel <= dist.get(v.getPageNumber())) // if we already found the dest, don't add anything to queue
+                if (foundLevel <= dist.get(v)) // if we already found the dest, don't add anything to queue
                     continue;
                 // adding node to queue
                 // check if we found a shorter path the node
                 if (dist.get(nodeW) != null){
                     int temp = dist.get(v) + 1;
-                    if (temp >= dist.get(w))
+                    if (temp >= dist.get(nodeW))
                         continue;
                 }
 
@@ -161,3 +163,4 @@ public class Algorithms{
         return pathString;
     }
 }
+
