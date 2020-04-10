@@ -62,6 +62,8 @@ public class Algorithms{
             if (foundLevel < dist.get(v))
                 continue;
 
+            if (dist.get(v) > 10)
+            	break;
             // Iterate over neighbours
             for (int w: v.getNeighbours()){
                 NodeT nodeW = SQLHandler.getNode(w); // get node for each neighbour
