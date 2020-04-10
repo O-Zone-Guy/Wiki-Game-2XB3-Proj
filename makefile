@@ -24,7 +24,7 @@ CLASSES= src/SQLHandler.java \
          src/NodeT.java \
          src/PathT.java \
          src/Algorithms.java \
-#         src/UInterface.java \
+         src/UInterface.java \
 
 # MIKE: test files
 TESTS= src/tests/TestSQLHandler.java \
@@ -34,6 +34,9 @@ TESTS= src/tests/TestSQLHandler.java \
 default: classes
 
 classes: $(CLASSES:.java=.class)
+
+run: src/UInterface.class
+	$(JVM) $(JCLASS) UInterface
 
 # MIKE: run tests
 tests: $(TESTS:.java=.class)
