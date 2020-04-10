@@ -106,7 +106,7 @@ public class UInterface{
 
 		// Creating a combobox for a predetermined destination
 		String[] start_examples = new String[] {"", "Glover, Missouri TO Doss, Missouri"};
-		JComboBox c1 = new JComboBox(start_examples);
+		JComboBox<String> c1 = new JComboBox<>(start_examples);
 		c1.setBounds(96, 24, 348, 20);
 		frame.getContentPane().add(c1);
 
