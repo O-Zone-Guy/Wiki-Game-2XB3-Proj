@@ -1,8 +1,8 @@
 /**
-   @brief A module that provides a User Interface for a user to interact with.
-   @author Harshveer Singh Gaba
-   @file UInterface.java
-   @date 2020-03-22
+ @brief A module that provides a User Interface for a user to interact with.
+ @author Harshveer Singh Gaba
+ @file UInterface.java
+ @date 2020-03-22
  */
 
 import java.awt.*;
@@ -143,14 +143,14 @@ public class UInterface{
 				try {
 					start_id = SQLHandler.getPageId(start);
 				} catch (SQLException ex) {
-					ex.printStackTrace();
+					JOptionPane.showMessageDialog(null, "Start Page is invalid");
 					return;
 				}
 
 				try {
 					end_id = SQLHandler.getPageId(end);
 				} catch (SQLException ex) {
-					ex.printStackTrace();
+					JOptionPane.showMessageDialog(null, "End Page is invalid");
 					return;
 				}
 
@@ -171,13 +171,21 @@ public class UInterface{
 		Set<PathT> result = Algorithms.getPaths(start, end);
 		NodeT first = SQLHandler.getNode(start);
 
-		for (PathT path : result)
-		{
-			ArrayList<NodeT> nodes = new ArrayList<>();
-			nodes.add(first);
-			nodes.addAll(path.getPath());
+		String start_name = SQLHandler.getPageName(start);
+		String end_name = SQLHandler.getPageName(end);
 
-			UIResults pt = new UIResults(nodes);
+		if (result.size()==0) {
+			JOptionPane.showMessageDialog(null, "There is no direct path from " + start_name + " to " + end_name);
+		}
+		else {
+			for (PathT path : result)
+			{
+				ArrayList<NodeT> nodes = new ArrayList<>();
+				nodes.add(first);
+				nodes.addAll(path.getPath());
+
+				UIResults pt = new UIResults(nodes);
+			}
 		}
 	}
 }
