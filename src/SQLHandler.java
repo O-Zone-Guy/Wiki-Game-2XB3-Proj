@@ -54,6 +54,7 @@ public class SQLHandler
      */
     public static int getPageId(String name) throws SQLException {
         if (closed()) open();
+        name = name.replace("'", "''");
         ResultSet result = statement.executeQuery("SELECT id FROM page WHERE name LIKE '" + name +"' LIMIT 1;");
         return result.getInt("id");
     }
@@ -114,4 +115,5 @@ public class SQLHandler
 
     }
 }
+
 

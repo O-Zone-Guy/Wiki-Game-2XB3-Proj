@@ -82,6 +82,7 @@ public class UIResults extends JPanel {
 
         // frame title
         StringBuilder title = new StringBuilder();
+        title.append("PATH ");
         for (NodeT node : nodes)
         {
             title.append(" - ").append(node.getPageName());
