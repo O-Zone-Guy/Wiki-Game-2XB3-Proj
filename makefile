@@ -30,6 +30,7 @@ CLASSES= src/cas/xb3/proj/alg/SQLHandler.java \
 # MIKE: test files
 TESTS= src/tests/TestSQLHandler.java \
 			 src/tests/AllTests.java \
+			src/tests/TestNodeT.java \
 
 # sets default entry for makefile
 default: classes
@@ -43,7 +44,7 @@ run: src/cas/xb3/proj/UI/UInterface.class
 tests: $(TESTS:.java=.class)
 
 test: src/tests/AllTests.class
-	$(JVM) $(JCLASS) org.junit.runner.JUnitCore AllTests
+	$(JVM) $(JCLASS) org.junit.runner.JUnitCore tests.AllTests
 
 # consider using doxygen
 docs:
