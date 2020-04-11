@@ -116,37 +116,37 @@ public class Algorithms{
 
     }
 
-    /**
-     @brief Sorts a set of paths based on the names of the pages in the path.
-     @param paths ∶ Collection<PathT> The set of paths to sort.
-     @return ArrayList<PathT> paths The sorted paths based on the names of pages in each path.
-     */
-    public static ArrayList<PathT> sortPaths(Collection<PathT> paths){
-        ArrayList<PathT> sortedPaths = new ArrayList<PathT>(paths);
-        ArrayList<String> pathStrings = new ArrayList<>();
+    // /**
+    //  @brief Sorts a set of paths based on the names of the pages in the path.
+    //  @param paths ∶ Collection<PathT> The set of paths to sort.
+    //  @return ArrayList<PathT> paths The sorted paths based on the names of pages in each path.
+    //  */
+    // public static ArrayList<PathT> sortPaths(Collection<PathT> paths){
+    //     ArrayList<PathT> sortedPaths = new ArrayList<PathT>(paths);
+    //     ArrayList<String> pathStrings = new ArrayList<>();
 
-        // Turn the paths into string.
-        for(PathT path: sortedPaths)
-            pathStrings.add(pathToString(path));
+    //     // Turn the paths into string.
+    //     for(PathT path: sortedPaths)
+    //         pathStrings.add(pathToString(path));
 
-        // selection sort
-        // small list, no need for complicated sorting methods
-        for (int i = 0; i< sortedPaths.size(); i++){
-            int min = i;
-            for (int j = i + 1; j < sortedPaths.size(); j++)
-                if(pathStrings.get(j).compareTo(pathStrings.get(min)) < 0)
-                    min = j;
-            PathT tempP = sortedPaths.get(min);
-            String tempS = pathStrings.get(min);
+    //     // selection sort
+    //     // small list, no need for complicated sorting methods
+    //     for (int i = 0; i< sortedPaths.size(); i++){
+    //         int min = i;
+    //         for (int j = i + 1; j < sortedPaths.size(); j++)
+    //             if(pathStrings.get(j).compareTo(pathStrings.get(min)) < 0)
+    //                 min = j;
+    //         PathT tempP = sortedPaths.get(min);
+    //         String tempS = pathStrings.get(min);
 
-            sortedPaths.set(min, sortedPaths.get(i));
-            pathStrings.set(min, pathStrings.get(i));
-            sortedPaths.set(i, tempP);
-            pathStrings.set(i, tempS);
-        }
+    //         sortedPaths.set(min, sortedPaths.get(i));
+    //         pathStrings.set(min, pathStrings.get(i));
+    //         sortedPaths.set(i, tempP);
+    //         pathStrings.set(i, tempS);
+    //     }
 
-        return sortedPaths;
-    }
+    //     return sortedPaths;
+    // }
 
     /**
      @brief Search the paths for a string.
