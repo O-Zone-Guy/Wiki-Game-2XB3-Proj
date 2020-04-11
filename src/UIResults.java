@@ -107,8 +107,10 @@ public class UIResults extends JPanel {
             }
 
             // sort categories and neighbours
-            Collections.sort(categories);
-            Collections.sort(neighbours);
+            // Collections.sort(categories);
+            // Collections.sort(neighbours);
+            Algorithms.sort(categories);
+            Algorithms.sort(neighbours);
 
             // number of rows after new node depends on size of categories or neighbours.
             int rows = Math.max(neighbours.size(), categories.size());
@@ -159,4 +161,3 @@ public class UIResults extends JPanel {
         frame.setLocationRelativeTo(null);
     }
 }
-
