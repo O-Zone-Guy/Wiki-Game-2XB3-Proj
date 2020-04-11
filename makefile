@@ -36,8 +36,8 @@ default: classes
 
 classes: $(CLASSES:.java=.class)
 
-run: src/UInterface.class
-	$(JVM) $(JCLASS) UInterface
+run: src/cas/xb3/proj/UI/UInterface.class
+	$(JVM) $(JCLASS) cas.xb3.proj.UI.UInterface
 
 # MIKE: run tests
 tests: $(TESTS:.java=.class)
@@ -50,8 +50,8 @@ docs:
 	doxygen Doxyfile
 
 # MIKE: temp rule for database testing
-dbtest: src/SQLHandler.class
-	$(JVM) $(JCLASS) SQLHandler
+# dbtest: src/SQLHandler.class
+# 	$(JVM) $(JCLASS) SQLHandler
 
 # # MIKE: app testing
 # app: src/UInterface.class
