@@ -25,6 +25,7 @@ CLASSES= src/SQLHandler.java \
          src/PathT.java \
          src/Algorithms.java \
          src/UInterface.java \
+         src/UIResults.java \
 
 # MIKE: test files
 TESTS= src/tests/TestSQLHandler.java \
@@ -51,6 +52,10 @@ docs:
 # MIKE: temp rule for database testing
 dbtest: src/SQLHandler.class
 	$(JVM) $(JCLASS) SQLHandler
+
+# # MIKE: app testing
+# app: src/UInterface.class
+# 	$(JVM) $(JCLASS) UInterface
 
 # cleans project
 clean:
