@@ -20,12 +20,12 @@ JVM = java
 	$(JC) $(JFLAGS) $(JCLASS) $*.java
 
 # need to list all our java source files
-CLASSES= src/SQLHandler.java \
-         src/NodeT.java \
-         src/PathT.java \
-         src/Algorithms.java \
-         src/UInterface.java \
-         src/UIResults.java \
+CLASSES= src/cas/xb3/proj/alg/SQLHandler.java \
+         src/cas/xb3/proj/NodeT.java \
+         src/cas/xb3/proj/PathT.java \
+         src/cas/xb3/proj/alg/Algorithms.java \
+         src/cas/xb3/proj/UI/UInterface.java \
+         src/cas/xb3/proj/UI/UIResults.java \
 
 # MIKE: test files
 TESTS= src/tests/TestSQLHandler.java \
