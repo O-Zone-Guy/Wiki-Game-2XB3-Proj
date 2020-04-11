@@ -6,8 +6,8 @@
 #+latex_header: \usepackage[a4paper, margin=1in]{geometry} \usepackage[utf8]{inputenc}
 
 * Things to add here                                               :noexport:
-* TODO Finish Project [83%]
-  DEADLINE: <2020-04-06 Mon>
+* TODO Finish Project [74%]
+  DEADLINE: <2020-04-12 Sun>
   :PROPERTIES:
   :COOKIE_DATA: todo recursive
   :END:
@@ -55,7 +55,7 @@
        - set of neighbouring nodes numbers, not ADT
 *** DONE Split req into functional and non-functional bullet points
     CLOSED: [2020-03-10 Tue 20:51]
-** TODO Implement program [90%]
+** TODO Implement program [76%]
 *** DONE Assign implementation
     CLOSED: [2020-03-10 Tue 20:50] DEADLINE: <2020-03-13
 *** DONE Distribute modules work
@@ -115,11 +115,24 @@
      CLOSED: [2020-03-20 Fri 21:11]
 **** DONE Implement PathT
      CLOSED: [2020-03-20 Fri 21:11]
-*** ASSIGN UI Implementation
-    DEADLINE: <2020-03-20 Fri>
+*** DONE UI Implementation
+    CLOSED: [2020-04-11 Sat 19:38] DEADLINE: <2020-03-20 Fri>
     - State "ASSIGN"     from "TODO"       [2020-03-10 Tue 20:57] \\
       Harshveer Gaba
     - Needs to be a singleton
+*** ASSIGN Tests
+    - State "ASSIGN"     from "TODO"       [2020-04-11 Sat 19:39] \\
+      Omar Alkesh
+**** DONE NodeT
+     CLOSED: [2020-04-11 Sat 19:39]
+**** DONE PathT
+     CLOSED: [2020-04-11 Sat 19:39]
+**** TODO Algorithms
+***** TODO Sort
+**** TODO SQLHandler
+** ASSIGN Project report
+   - State "ASSIGN"     from "TODO"       [2020-04-11 Sat 19:38] \\
+     Mike and Omar. And anyone else who wants to help.
 * Member roles
 | Name                 | Role                                               |
 |----------------------+----------------------------------------------------|
