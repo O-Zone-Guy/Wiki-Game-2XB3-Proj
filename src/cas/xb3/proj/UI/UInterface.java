@@ -1,3 +1,5 @@
+package cas.xb3.proj.UI;
+
 /**
  @brief A module that provides a User Interface for a user to interact with.
  @author Harshveer Singh Gaba
@@ -11,7 +13,17 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Set;
 
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+import cas.xb3.proj.NodeT;
+import cas.xb3.proj.PathT;
+import cas.xb3.proj.alg.Algorithms;
+import cas.xb3.proj.alg.SQLHandler;
 
 /**
  * @brief User Interface class
@@ -206,5 +218,3 @@ public class UInterface{
 		}
 	}
 }
-
-

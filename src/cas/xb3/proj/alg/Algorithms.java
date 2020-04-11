@@ -1,3 +1,5 @@
+package cas.xb3.proj.alg;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -7,6 +9,9 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
+
+import cas.xb3.proj.NodeT;
+import cas.xb3.proj.PathT;
 
 /**
  @brief A class responsible for providing the different algorithm implementations used in the project

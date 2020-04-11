@@ -1,3 +1,5 @@
+package cas.xb3.proj;
+
 /**
    @brief A module that provides an ADT to represent a node in the graph.
    @file NodeT.java
@@ -7,7 +9,6 @@
 
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**

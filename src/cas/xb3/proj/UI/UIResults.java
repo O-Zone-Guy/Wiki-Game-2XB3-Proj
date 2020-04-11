@@ -1,17 +1,32 @@
+package cas.xb3.proj.UI;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 /**
  @brief A module that provides a User Interface for the results of the application.
  @author Mike Tee - teemh
  @file UIResults.java
  @date 2020-04-09
  */
-
-import javax.swing.*;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import java.awt.*;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Collections;
+
+import cas.xb3.proj.NodeT;
+import cas.xb3.proj.alg.Algorithms;
+import cas.xb3.proj.alg.SQLHandler;
 
 public class UIResults extends JPanel {
 

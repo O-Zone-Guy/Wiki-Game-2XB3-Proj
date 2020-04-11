@@ -1,3 +1,5 @@
+package cas.xb3.proj;
+
 /**
    @brief A module that provides an ADT to represent a path from one "node" to another.
    @author Omar Alkersh

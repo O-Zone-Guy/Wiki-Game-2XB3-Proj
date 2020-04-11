@@ -1,3 +1,5 @@
+package cas.xb3.proj.alg;
+
 /**
  @brief A module that provides an interface to the SQLite3 database.
  @file SQLHandler.java
@@ -10,8 +12,9 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
-import java.util.*;
+import cas.xb3.proj.NodeT;
 
 /**
  @brief A singleton class that gets page name, id, categories and neighbours from database.
@@ -115,5 +118,3 @@ public class SQLHandler
 
     }
 }
-
-
