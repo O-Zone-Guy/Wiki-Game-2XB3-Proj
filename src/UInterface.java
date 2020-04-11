@@ -22,6 +22,8 @@ public class UInterface{
 	private JFrame frame;
 	private JTextField t1;
 	private JTextField t2;
+	private JTextField t3;
+	int mode = 0;
 
 	/**
 	 * @brief Launching the application and displaying the form
@@ -45,7 +47,7 @@ public class UInterface{
 
 		// Creating a new Frame and setting basic operations
 		frame = new JFrame();
-		frame.setBounds(0, 0, 524, 240);
+		frame.setBounds(0, 0, 520, 300);
 		frame.getContentPane().setLayout(null);
 		frame.setTitle("Wiki Game Shortest Path");
 		frame.setLocationRelativeTo(null); // draw frame in center of screen
@@ -60,31 +62,37 @@ public class UInterface{
 		t2 = new JTextField();
 		t2.setBounds(286, 94, 152, 20);
 		frame.getContentPane().add(t2);
-		t2.setText("Pinakion");
+		t2.setText("Homer");
+
+		t3 = new JTextField();
+		t3.setBounds(286, 140, 152, 20);
+		frame.getContentPane().add(t3);
+		t3.setText("France");
 
 		// Creating a label to provide a description for the first text field
 		JLabel l1 = new JLabel("Start Page");
-		l1.setHorizontalAlignment(SwingConstants.CENTER);
 		l1.setBounds(96, 62, 152, 14);
 		frame.getContentPane().add(l1);
 
 		// Creating a label to provide a description for the second text field
 		JLabel l2 = new JLabel("End Page");
-		l2.setHorizontalAlignment(SwingConstants.CENTER);
-		l2.setBounds(282, 62, 152, 14);
+		l2.setBounds(286, 62, 152, 14);
 		frame.getContentPane().add(l2);
 
 		// Example Text
 		JLabel example_label = new JLabel("Example ");
-		example_label.setHorizontalAlignment(SwingConstants.CENTER);
-		example_label.setBounds(0, 24, 100, 14);
+		example_label.setBounds(24, 24, 100, 14);
 		frame.getContentPane().add(example_label);
 
 		// Custom Text
 		JLabel custom_label = new JLabel("Custom ");
-		custom_label.setHorizontalAlignment(SwingConstants.CENTER);
-		custom_label.setBounds(0, 96, 100, 14);
+		custom_label.setBounds(24, 96, 100, 14);
 		frame.getContentPane().add(custom_label);
+
+		// Must Include Text
+		JLabel must_label = new JLabel("Path Must Include Page ");
+		must_label.setBounds(96, 140, 200, 14);
+		frame.getContentPane().add(must_label);
 
 		// Creating a combobox for a predetermined destination
 		String[] start_examples = new String[] {"CUSTOM",
@@ -98,6 +106,7 @@ public class UInterface{
 		// Creating a new button for execution
 		JButton button = new JButton("");
 		button.setText("Find Paths!");
+		button.setBounds(190, 190, 148, 36);
 		// Adding an ActionListener to the button for it to access ButtonClicked functionality
 		button.addActionListener(new ActionListener() {
 			/**
@@ -105,9 +114,11 @@ public class UInterface{
 			 * @param e Button Clicked ActionEvent
 			 */
 			public void actionPerformed(ActionEvent e) {
+				mode = 0; // mode 0 uses text fields, mode 1 uses dropdown.
 
 				String start = t1.getText().trim();
 				String end = t2.getText().trim();
+				String must = t3.getText().trim();
 
 				String combo_value = String.valueOf(c1.getSelectedItem()).trim();
 				if (!combo_value.equals("CUSTOM"))
@@ -115,27 +126,38 @@ public class UInterface{
 					String[] split = combo_value.split(" TO ");
 					start = split[0];
 					end = split[1];
+					mode = 1;
 				}
 
 				int start_id = 0;
 				int end_id = 0;
+				int must_id = -1; // -1 is not a valid id.
 
 				try {
 					start_id = SQLHandler.getPageId(start);
 				} catch (SQLException ex) {
-					JOptionPane.showMessageDialog(null, "Start Page is invalid");
+					JOptionPane.showMessageDialog(null, "Start Page is not a page");
 					return;
 				}
 
 				try {
 					end_id = SQLHandler.getPageId(end);
 				} catch (SQLException ex) {
-					JOptionPane.showMessageDialog(null, "End Page is invalid");
+					JOptionPane.showMessageDialog(null, "End Page is not a page");
 					return;
 				}
 
+				if (!must.equals("")) {
+					try {
+						must_id = SQLHandler.getPageId(must);
+					} catch (SQLException ex) {
+						JOptionPane.showMessageDialog(null, "Must Include Page is not a page");
+						return;
+					}
+				}
+
 				try {
-					run(start_id, end_id);
+					run(start_id, end_id, must_id);
 				} catch (SQLException ex) {
 					//ex.printStackTrace();
 					JOptionPane.showMessageDialog(null, "SQL Error");
@@ -144,12 +166,11 @@ public class UInterface{
 				button.setText("Find Paths!");
 			}
 		});
-		button.setBounds(190, 140, 148, 36);
 		frame.getContentPane().add(button);
 
 	}
 
-	public void run(int start, int end) throws SQLException {
+	public void run(int start, int end, int must_id) throws SQLException {
 		// create new frame for each result.
 		Set<PathT> result = Algorithms.getPaths(start, end);
 		NodeT first = SQLHandler.getNode(start);
@@ -162,7 +183,20 @@ public class UInterface{
 			return;
 		}
 
-		for (PathT path : result)
+		Set<PathT> paths = result;
+
+		// if mode is custom and must_id is valid
+		if (mode == 0 && must_id >= 0)
+		{
+			String must_name = SQLHandler.getPageName(must_id);
+			paths = Algorithms.searchPaths(result, SQLHandler.getPageName(must_id));
+			if (paths.size() == 0) {
+				JOptionPane.showMessageDialog(null, "There is no path from " + start_name + " to " + end_name + " that contains " + must_name);
+				return;
+			}
+		}
+
+		for (PathT path : paths)
 		{
 			ArrayList<NodeT> nodes = new ArrayList<>();
 			nodes.add(first);

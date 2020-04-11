@@ -9,20 +9,20 @@ import java.util.Queue;
 import java.util.Set;
 
 /**
-   @brief A class responsible for providing the different algorithm implementations used in the project
-   All methods should be static.
+ @brief A class responsible for providing the different algorithm implementations used in the project
+ All methods should be static.
  */
 public class Algorithms{
 
 
     /**
-       @brief finds the set of shortest path between src and dest.
+     @brief finds the set of shortest path between src and dest.
 
-       @param src The number of the source node.
-       @param dest the number of the destination node.
+     @param src The number of the source node.
+     @param dest the number of the destination node.
 
-       @return The set of shortest paths.
-     * @throws SQLException
+     @return The set of shortest paths.
+      * @throws SQLException
      */
     public static Set<PathT> getPaths(int src, int dest) throws SQLException{
         Set<PathT>              paths = new HashSet<>(); // the set of paths to be returned.
@@ -110,9 +110,9 @@ public class Algorithms{
     }
 
     /**
-       @brief Sorts a set of paths based on the names of the pages in the path.
-       @param paths ∶ Collection<PathT> The set of paths to sort.
-       @return ArrayList<PathT> paths The sorted paths based on the names of pages in each path.
+     @brief Sorts a set of paths based on the names of the pages in the path.
+     @param paths ∶ Collection<PathT> The set of paths to sort.
+     @return ArrayList<PathT> paths The sorted paths based on the names of pages in each path.
      */
     public static ArrayList<PathT> sortPaths(Collection<PathT> paths){
         ArrayList<PathT> sortedPaths = new ArrayList<PathT>(paths);
@@ -142,13 +142,13 @@ public class Algorithms{
     }
 
     /**
-       @brief Search the paths for a string.
-       @details Keeps the paths that contain nodes that contain the given string in its name.
-       @param paths The collection of paths to search.
-       @param string The string to search for.
-       @return Paths that contain the given string.
+     @brief Search the paths for a string.
+     @details Keeps the paths that contain nodes that contain the given string in its name.
+     @param paths The collection of paths to search.
+     @param string The string to search for.
+     @return Paths that contain the given string.
      */
-    public static Collection<PathT> searchPaths(Collection<PathT> paths, String string){
+    public static Set<PathT> searchPaths(Set<PathT> paths, String string){
         HashSet<PathT> filteredPaths = new HashSet<>(paths);
         filteredPaths.removeIf(p -> !p.contains(string));
         return filteredPaths;
