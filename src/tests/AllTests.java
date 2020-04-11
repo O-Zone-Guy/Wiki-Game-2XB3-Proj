@@ -6,7 +6,8 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
         TestSQLHandler.class,
-            TestNodeT.class
+            TestNodeT.class,
+            TestPathT.class
 })
 
 public class AllTests
