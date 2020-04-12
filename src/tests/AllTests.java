@@ -7,7 +7,8 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({
         TestSQLHandler.class,
             TestNodeT.class,
-            TestPathT.class
+            TestPathT.class,
+            TestAlgorithm.class
 })
 
 public class AllTests
