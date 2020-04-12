@@ -1,5 +1,12 @@
 package cas.xb3.proj.UI;
 
+/**
+ @brief A module that provides a User Interface for the results of the application.
+ @author Mike Tee - teemh
+ @file UIResults.java
+ @date 2020-04-09
+ */
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -10,12 +17,6 @@ import java.awt.Graphics;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-/**
- @brief A module that provides a User Interface for the results of the application.
- @author Mike Tee - teemh
- @file UIResults.java
- @date 2020-04-09
- */
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -28,12 +29,15 @@ import cas.xb3.proj.NodeT;
 import cas.xb3.proj.alg.Algorithms;
 import cas.xb3.proj.alg.SQLHandler;
 
+/**
+ * @brief Draw graph and table
+ */
 public class UIResults extends JPanel {
 
     // used to mark which rows need to be highlighted.
-    public ArrayList<Integer> hi_rows = new ArrayList<>();
+	private ArrayList<Integer> hi_rows = new ArrayList<>();
 
-    public ArrayList<NodeT> nodes;
+    private ArrayList<NodeT> nodes;
 
     // custom renderer to color cells.
     class CellRenderer extends DefaultTableCellRenderer {
@@ -53,7 +57,9 @@ public class UIResults extends JPanel {
         }
     }
 
-    // draw the connected nodes
+	/**
+	 * @brief Draw the connected nodes for a given path
+	 */
     class DrawPath extends JComponent
     {
         int max_w;
@@ -90,6 +96,9 @@ public class UIResults extends JPanel {
         }
     }
 
+	/**
+	 * @brief Create a window for sequence of nodes in path and display a 2d graph and a table.
+	 */
     public UIResults(ArrayList<NodeT> path) throws SQLException {
         nodes = path;
 
@@ -122,8 +131,6 @@ public class UIResults extends JPanel {
             }
 
             // sort categories and neighbours
-            // Collections.sort(categories);
-            // Collections.sort(neighbours);
             Algorithms.sort(categories);
             Algorithms.sort(neighbours);
 
@@ -176,3 +183,4 @@ public class UIResults extends JPanel {
         frame.setLocationRelativeTo(null);
     }
 }
+
