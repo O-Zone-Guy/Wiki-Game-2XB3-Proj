@@ -49,6 +49,7 @@ test: src/tests/AllTests.class
 # consider using doxygen
 docs:
 	doxygen Doxyfile
+	make -C latex
 
 # MIKE: temp rule for database testing
 # dbtest: src/SQLHandler.class
