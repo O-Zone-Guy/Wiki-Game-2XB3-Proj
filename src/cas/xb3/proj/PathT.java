@@ -32,7 +32,7 @@ public class PathT {
 
     /**
        @brief Add a page to the end of the path.
-       @param node∶ NodeT The node to add to the path.
+       @param node: NodeT The node to add to the path.
      */
     public void addPage(NodeT node){
         path.add(node);
@@ -52,7 +52,7 @@ public class PathT {
 
     /**
        @brief Checks if any of the nodes' page names contain the string.
-       @param str∶ String The string to search for.
+       @param str: String The string to search for.
        @return True if any node contains the string.
      */
     public boolean contains(String str){

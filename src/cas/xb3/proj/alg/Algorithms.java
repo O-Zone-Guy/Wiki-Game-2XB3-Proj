@@ -118,7 +118,7 @@ public class Algorithms{
 
     // /**
     //  @brief Sorts a set of paths based on the names of the pages in the path.
-    //  @param paths ∶ Collection<PathT> The set of paths to sort.
+    //  @param paths : Collection<PathT> The set of paths to sort.
     //  @return ArrayList<PathT> paths The sorted paths based on the names of pages in each path.
     //  */
     // public static ArrayList<PathT> sortPaths(Collection<PathT> paths){
