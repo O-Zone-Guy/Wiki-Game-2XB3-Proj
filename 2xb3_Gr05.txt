@@ -1,0 +1,9 @@
+COMP SCI 2XB3
+
+Omar Alkersh, 400214491 - Project management, Algorithms
+Mike Tee, 000363946 - Database interface, Project requirements, Graph visualisation.
+Nihal Azevado, 400182751 - Record meeting minutes, Algorithms.
+Harshveer Gaba, 400214494 - User Interface, Error handling.
+Jingze(David) Dai, 400201059 - Project design specification.
+
+The work being submitted is solely the work of the group. - 2020-04-11
