@@ -6,8 +6,8 @@
 #+latex_header: \usepackage[a4paper, margin=1in]{geometry} \usepackage[utf8]{inputenc}
 
 * Things to add here                                               :noexport:
-* TODO Finish Project [74%]
-  DEADLINE: <2020-04-12 Sun>
+* DONE Finish Project [74%]
+  CLOSED: [2020-04-21 Tue 18:37] DEADLINE: <2020-04-12 Sun>
   :PROPERTIES:
   :COOKIE_DATA: todo recursive
   :END:
