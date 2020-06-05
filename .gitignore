@@ -11,6 +11,8 @@ auto/*
 *.xmi
 html/*
 latex/*
+.idea/*
+*.iml
 
 ## eclipse files
 .classpath
